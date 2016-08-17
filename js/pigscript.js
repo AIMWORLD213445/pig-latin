@@ -12,7 +12,6 @@ var translate = function(string){
     return lowerString;
   }
 };
-
 var shiftConsonants = function(array){
   var removedConsonants = [];
   for (i=0; i<=array.length; i++) {
@@ -28,11 +27,10 @@ var shiftConsonants = function(array){
       console.log(finalResult);
       return finalResult + "uay";
     } else {
-      return finalResult + "ay";
+      console.log(finalResult);
+      return result + "ay";
  };
 };
-
-
 
 // ==UI=LOGIC==
 $(document).ready(function(){
@@ -42,5 +40,4 @@ $(document).ready(function(){
     var sentenceTranslated = translate(sentenceInput);
     $("#result").text(sentenceTranslated);
   });
-
 });
