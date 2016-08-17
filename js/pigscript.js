@@ -22,8 +22,17 @@ var shiftConsonants = function(array){
   }
   var joinedConsonants = removedConsonants.join("");
   var joinedArray = array.join("");
-  return joinedArray + joinedConsonants + "ay";
+  var result = joinedArray + joinedConsonants;
+    if(result.charAt(result.length-1) === "q"){
+      var finalResult = result.replace("u", "");
+      console.log(finalResult);
+      return finalResult + "uay";
+    } else {
+      return finalResult + "ay";
+ };
 };
+
+
 
 // ==UI=LOGIC==
 $(document).ready(function(){
