@@ -12,6 +12,8 @@ var translate = function(string){
     return lowerString;
   }
 };
+
+
 var shiftConsonants = function(array){
   var removedConsonants = [];
   for (i=0; i<=array.length; i++) {
@@ -32,12 +34,21 @@ var shiftConsonants = function(array){
  };
 };
 
+var sentence = function(string){
+  wordSplit = string.split(" ")
+  newString = ""
+  wordSplit.forEach( function(words){
+    newString = newString + translate(words) + " ";
+  })
+  return newString;
+}
+
 // ==UI=LOGIC==
 $(document).ready(function(){
   $("form#pig-latin").submit(function(event){
     event.preventDefault();
     var sentenceInput = $("input#sentenceInput").val();
-    var sentenceTranslated = translate(sentenceInput);
+    var sentenceTranslated = sentence(sentenceInput);
     $("#result").text(sentenceTranslated);
   });
 });
